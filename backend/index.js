@@ -9,8 +9,6 @@ app.get('/', (request, response) => {
     return response.status(234).send('Hi there')
 });
 
-// test
-
 mongoose
     .connect(mongoDBURL)
     .then(() =>{

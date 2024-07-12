@@ -1,5 +1,25 @@
 import mongoose from "mongoose";
 
-const boolSchema = mongoose.Schema();
+const bookSchema = mongoose.Schema(
+    {
+        title: {
+            type: String,
+            required: true,
+        },
 
-const Book = mongoose.model('Cat', {name: String});
+        author: {
+            type: String,
+            required: true,
+        },
+
+        publishYear: {
+            type: Number,
+            required: true,
+        }
+    },
+    {
+        timestamps: true,
+    }
+);
+
+export const Book = mongoose.model('Cat', bookSchema);

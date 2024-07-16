@@ -5,6 +5,8 @@ import {Book} from './models/bookModel.js';
 
 const app = express();
 
+app.use(express.json());
+
 app.get('/', (request, response) => {
     console.log(request)
     return response.status(234).send('Hi there')
@@ -34,6 +36,42 @@ app.post('/books', async(request, response) =>{
         response.status(500).send({message:error.message})        
     }
 });
+// Route to get all books from database
+app.get('/books', async (request, response) => {
+    try {
+        const books = await Book.find({});
+        return response.status(200).json({
+            count: books.length,
+            data: books
+        });
+        
+    } catch (error) {
+        console.log(error.message)
+        response.status(500).send({message: error.message});
+        
+    }
+});
+
+// Route to get one book from database by id
+app.get('/books/:id', async (request, response) => {
+    try {
+
+        const {id} = request.params;
+
+        const books = await Book.findById(id);
+        
+        return response.status(200).json({
+            count: books.length,
+            data: books
+        });
+        
+    } catch (error) {
+        console.log(error.message)
+        response.status(500).send({message: error.message});
+        
+    }
+});
+
 mongoose
     .connect(mongoDBURL)
     .then(() =>{

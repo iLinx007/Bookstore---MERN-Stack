@@ -58,12 +58,9 @@ app.get('/books/:id', async (request, response) => {
 
         const {id} = request.params;
 
-        const books = await Book.findById(id);
-        
-        return response.status(200).json({
-            count: books.length,
-            data: books
-        });
+        const book = await Book.findById(id);
+
+        return response.status(200).json(book);
         
     } catch (error) {
         console.log(error.message)

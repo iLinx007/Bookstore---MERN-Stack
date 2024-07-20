@@ -69,6 +69,12 @@ const Home = () => {
                                     <Link to={`/book/details/${book._id}`}>
                                         <BsInfoCircle className='text-2xl text-green-800'/>                                    
                                     </Link>
+                                    <Link to={`/book/edit/${book._id}`}>
+                                        <AiOutlineEdit className='text-2xl text-yellow-600'/>                                    
+                                    </Link>
+                                    <Link to={`/book/edit/${book._id}`}>
+                                        <MdOutlineDelete className='text-2xl text-red-600'/>                                    
+                                    </Link>
                                 </div>
                             </td>
                             

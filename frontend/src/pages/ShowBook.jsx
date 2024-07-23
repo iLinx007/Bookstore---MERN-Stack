@@ -33,6 +33,7 @@ const ShowBook = () => {
                 <div className='my-4'>
                     <span className='text-xl mr-4 text-gray-500'>Id</span>
                     <span>{book.id}</span>
+                    {/* test */}
                 </div>
                 <div className='my-4'>
                     <span className='text-xl mr-4 text-gray-500'>Title</span>

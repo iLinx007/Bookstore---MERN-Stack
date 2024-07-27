@@ -17,7 +17,7 @@ const CreateBooks = () => {
       title,
       author,
       publishYear,
-    }
+    };
     setLoading(true);
     axios
       .post('http://localhost:5555/books', data)
@@ -28,7 +28,7 @@ const CreateBooks = () => {
       .catch((error) => {
         setLoading(false);
         alert('An error occured. Please check the console for more info');
-        console.log(error);
+        console.log(error.message);
       });
   }
 

@@ -37,7 +37,7 @@ const BooksCard = ({books}) => {
                         </Link>
 
                         <Link to={`/books/delete/${item._id}`}>
-                            <MdOutlineDelete className='text-2xl text-red-400 hover:text-black'/>
+                            <MdOutlineDelete className='text-2xl text-red-600 hover:text-black'/>
                         </Link>
 
                     </div>
